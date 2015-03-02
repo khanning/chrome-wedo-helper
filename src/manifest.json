@@ -1,0 +1,30 @@
+{
+  "name": "Chrome WeDo Helper",
+  "description": "Simple helper app to connect LEGO WeDo to Scratch 2.0.",
+  "version": "0.1",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": [
+        "js/sha1.js",
+        "js/enc-base64-min.js",
+        "js/socket.js",
+        "js/wedo.js",
+        "js/background.js"
+      ]
+    }
+  },
+  "icons": { "16": "res/icon16.png", "128": "res/icon128.png" },
+  "permissions": [
+    "usb",
+    "hid",
+    { "usbDevices": [
+        {
+          "vendorId": 1684,
+          "productId": 3
+        }
+      ]
+    }
+  ],
+  "sockets": { "tcpServer": {"listen": "127.0.0.1:8080"} }
+}
